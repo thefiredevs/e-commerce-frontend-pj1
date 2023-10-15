@@ -113,8 +113,8 @@ function WriteaReview({product, isOpen, setModal}) {
                 <TextBox placeholder='Share your thoughts on this product...' value={review} onChange={(e) => setReview(e.target.value)}></TextBox>
             </RatingWrapper>
             <ButtonWrapper>
-                <Button onClick={() => setModal(false)} >Cancel</Button>
-                <Button T="submit" onClick={handleSubmit} disabled={!review && !rating ? true : false}>Submit</Button>
+                <Button onClick={() => setModal(false)} >Cancelar</Button>
+                <Button T="submit" onClick={handleSubmit} disabled={!review && !rating ? true : false}>Enviar</Button>
             </ButtonWrapper>
         </Container>
     </ModalComp>

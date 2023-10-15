@@ -37,7 +37,7 @@ const Wrapper = styled.div`
 function Category() {
   return (
     <Container>   
-      <Title>Categories</Title>
+      <Title>Categorias</Title>
       <Wrapper>
           {Categoris.map((item) => {
               return <CategoryItems item={item} key={item.id} />

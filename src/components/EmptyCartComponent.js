@@ -63,8 +63,8 @@ function EmptyCartComponent() {
     <Contaier>
         <Wrapper>
             <Image src={CartSvg}></Image>
-            <Heading>Your cart is empty</Heading>
-            <Desc>Looks like you haven't added anything to cart yet</Desc>
+            <Heading>Seu carrinho está vazio</Heading>
+            <Desc>Parece que você ainda não adicionou nada ao carrinho</Desc>
             <Btn onClick={() => navigate('/')}>Go home</Btn>
         </Wrapper>
     </Contaier>

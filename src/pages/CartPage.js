@@ -431,10 +431,10 @@ function CartPage(props) {
             (cartProductRes?.products.length
             ? <>
             <Top>
-                <TopButton >Continue Shopping</TopButton>
+                <TopButton >Continue comprando</TopButton>
                 <TopTexts>
-                    <TopText>Shopping ba</TopText>
-                    <TopText>Your Wishlist</TopText>
+                    <TopText>Compre</TopText>
+                    <TopText>Sua lista de desejos</TopText>
                 </TopTexts>
                 <TopButton type="filled">CheckOut Now</TopButton>
             </Top>

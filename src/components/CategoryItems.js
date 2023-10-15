@@ -95,7 +95,7 @@ function CategoryItems(item) {
             <Image src={img}/>
             <Info>
                 <Title>{title}</Title>
-                <Button><Link style={link} to={`/products/${cat}`}>Read More</Link></Button>
+                <Button><Link style={link} to={`/products/${cat}`}>Ler Mais</Link></Button>
             </Info>
         </Container>
   )

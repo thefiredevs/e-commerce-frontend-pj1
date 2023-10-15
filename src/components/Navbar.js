@@ -261,7 +261,7 @@ function Navbar() {
     <Container>
         <Wrapper>
             <Left>
-                <Logo><Link onClick={() => redirect("/")} style={link} to="/">Title.</Link></Logo>
+                <Logo><Link onClick={() => redirect("/")} style={link} to="/">THe FIRE DEVS.</Link></Logo>
             </Left>
             <Center>
             <SearchContainer>

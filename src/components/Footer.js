@@ -93,7 +93,7 @@ function Footer() {
     <Container>
         
         <Left>
-            <Logo>Name.</Logo>
+            <Logo>THe FIRE DEVS.</Logo>
             <Description>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod possimus, dolor placeat voluptate ipsam delectus repellendus, laborum sunt ratione id obcaecati repudiandae, adipisci nihil fugit autem dignissimos quo! Officia, corporis?
             </Description>
@@ -115,9 +115,6 @@ function Footer() {
         <Center>
             <Title>Useful Links</Title>
             <List>
-                <ListItem>Product 1</ListItem>
-                <ListItem>Product 2</ListItem>
-                <ListItem>Product 3</ListItem>
                 <ListItem>Login</ListItem>
                 <ListItem>Sign up</ListItem>
                 <ListItem>Wish list</ListItem>
@@ -130,13 +127,13 @@ function Footer() {
         <Right>
         <Title>Contect Us</Title>
             <ContectItem>
-                <Map/> Street:  Shop No 24, Anand Sagar Chs, Sector 17, Vashi<br/>City:   Mumbai<br/>State/province/area:    Maharashtra<br/>Zip code  400703<br/>Country  India
+                <Map/> via Av. 24 de Julho and Av. Amilcar Cabral<br/>cidade maputo<br/><br/>Zip code  211213<br/>Mozambique
             </ContectItem> 
             <ContectItem>
-                <Call/>+91 02256103968
+                <Call/>+258 879428236
             </ContectItem> 
             <ContectItem>
-                <Email/> vc8bp3@gmail.com
+                <Email/> thefiredevs@gmail.com
             </ContectItem> 
         </Right>
     </Container>

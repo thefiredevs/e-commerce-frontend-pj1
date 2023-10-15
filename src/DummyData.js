@@ -1,50 +1,19 @@
 export const hero = [
     {
-        "title": "Elevate Your Style with High-Quality Clothing from QueenTouch",
-        "description": "Discover our wide range of clothing options for men, women, and children. Made from 100% pure denim, our garments are both durable and comfortable. Shop with us now and take your wardrobe to the next level.",
-        "cta": "Shop Now"
+        "title": "Eleve seu estilo com roupas de alta qualidade",
+        "description": "Descubra nossa ampla variedade de opções de roupas para homens, mulheres e crianças. Compre conosco agora e leve seu guarda-roupa para o próximo nível..",
+        "cta": "Compre agora"
     },
     {
-        "title": "Find Your Perfect Fit at QueenTouch",
-        "description": "From classic cuts to on-trend styles, we have something for everyone. Our clothing is made with attention to detail and a focus on comfort, so you can look and feel your best. Shop with us today and discover your new favorite outfit.",
-        "cta": "Browse Our Collection"
+        "title": "Encontre o ajuste perfeito",
+        "description": "FDos cortes clássicos aos estilos da moda, temos algo para todos. Nossas roupas são confeccionadas com atenção aos detalhes e foco no conforto, para que você possa estar e se sentir no seu melhor. Compre conosco hoje e descubra sua nova roupa favorita.",
+        "cta": "Navegue pela nossa coleção"
     },
     {
-        "title": "Experience the Quality and Style of QueenTouch",
-        "description": "At QueenTouch, we are committed to providing our customers with the best possible shopping experience. From the moment you visit our website, you will be greeted with a wide selection of fashionable and stylish clothing options for all genders. Shop with us now and see the difference for yourself.",
-        "cta": "Start Shopping"
-
-    },
-    {
-        "title": "Stay Ahead of the Trends with QueenTouch Clothing",
-        "description": "From casual everyday wear to formal occasion dresses, we have the latest styles for every mood and occasion. Our clothing is made with quality materials and attention to detail, ensuring that you always look and feel your best. Shop with us now and stay ahead of the curve.",
-        "cta": "Shop New Arrivals"
-    },
-    {
-        "title": "Get the Best Value for Your Money at QueenTouch",
-        "description": "We believe that high-quality clothing doesn't have to break the bank. That's why we offer a wide range of affordable options for men, women, and children. Shop with us and discover the best value for your money.",
-        "cta": "View Our Deals"
-    },
-    {
-        "title": "Join the QueenTouch Community and Get Exclusive Benefits",
-        "description": "When you shop with us, you're not just getting great clothing - you're joining a community of fashion-forward individuals who love quality and style. As a member of the QueenTouch community, you'll get access to exclusive discounts, early access to new products, and much more. Sign up now and start enjoying the benefits.",
-        "cta": "Join Now"
-    },
-    {
-        "title": "Shop the Best in Quality and Style at QueenTouch",
-        "description": "Our clothing is made with the finest materials and attention to detail, ensuring that you always look and feel your best. From casual wear to formal attire, we have something for every occasion. Shop with us now and experience the difference for yourself.",
-        "cta": "Shop Now"
-    },
-        {
-        "title": "Find Your Perfect Outfit at QueenTouch",
-        "description": "With a wide range of styles and sizes to choose from, we have something for everyone. Our clothing is made with comfort and durability in mind, so you can feel confident and comfortable all day long. Shop with us now and find your perfect outfit.",
-        "cta": "Browse Our Collection"
-    },
-    {
-        "title": "Discover the Best in Fashion at QueenTouch",
-        "description": "From classic cuts to on-trend styles, we have the latest and greatest in fashion. Our clothing is made with quality materials and attention to detail, ensuring that you always look and feel your best. Shop with us now and discover the best in fashion.",
-        "cta": "Shop Now"
-    },
+        "title": "fique à frente das tendências com roupas",
+        "description": "Desde roupas casuais do dia a dia até vestidos para ocasiões formais, temos os estilos mais recentes para todos os gostos e ocasiões. Nossas roupas são confeccionadas com materiais de qualidade e atenção aos detalhes, garantindo que você esteja sempre no seu melhor. Compre conosco agora e fique à frente da curva.",
+        "cta": "Comprar Novidades"
+    }
 ]
   
 

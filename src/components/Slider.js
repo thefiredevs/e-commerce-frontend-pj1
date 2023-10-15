@@ -68,7 +68,7 @@ const Button = styled.button`
 
 function Slider() {
     const navigate = useNavigate();
-    const index = Math.floor(Math.random() * 8) + 1
+    const index = Math.floor(Math.random() * 3) + 1
     const heroInfo = hero[index]
     console.log(hero)
 
