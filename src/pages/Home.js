@@ -13,6 +13,8 @@ const Title = styled.h2`
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 40px;
     font-weight: 500;
+    font-weight: bold;
+    text-align: center;
     margin-bottom: 15px;
     margin-left: 5px;
 `

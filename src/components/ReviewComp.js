@@ -95,11 +95,11 @@ function ReviewComp({productID, productName, ratingCount, rating, setModal}) {
         <Top>
             <TitleWAR>
                 <Title>{productName}</Title>
-                <Button onClick={handleWriteReview} ><DriveFileRenameOutlineIcon/> Write a Review</Button>
+                <Button onClick={handleWriteReview} ><DriveFileRenameOutlineIcon/> Avaliar</Button>
             </TitleWAR>
             <RatingWrapper>
                 <RatingCount>{rating}</RatingCount><Rating value={rating} readOnly precision={0.1} /> 
-                {ratingCount} Reviews
+                {ratingCount} Avaliacoes
             </RatingWrapper>
         </Top>
         <Hr/>

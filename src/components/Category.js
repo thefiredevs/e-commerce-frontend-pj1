@@ -15,8 +15,10 @@ const Title = styled.div`
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 40px;
     font-weight: 500;
+    font-weight: bold;
     margin-bottom: 15px;
-    margin-left: 5px;
+    margin-left: 150px;
+   
 `
 
 const Wrapper = styled.div`

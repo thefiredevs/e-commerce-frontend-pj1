@@ -54,7 +54,7 @@ const Input = styled.input`
 const Button = styled.button`
     border: none    ;
     flex: 1;
-    background-color: #6fc3c9;
+    background-color: #006bc8;
     color: white;
     cursor: pointer;
     &:hover {
@@ -70,7 +70,7 @@ function NewsLetter() {
         <Title>Assine a nossa newsletter</Title>
         <Description>E receba até 20% de desconto no primeiro pedido</Description>
         <InputContainer>
-            <Input placeholder='Enter your email'/>
+            <Input placeholder='Digite seu email'/>
             <Button><Send/></Button>
         </InputContainer>
     </Container>

@@ -43,7 +43,7 @@ const WishList = styled.button`
 
   :hover {
     color: white;
-    background-color: teal;
+    background-color: #006bc8;
     border-radius: 0.5vmin;
     box-shadow: 0px 0px 3px #888888;
   }
@@ -155,10 +155,10 @@ function ProductItem(data) {
           <Description>{desc ? desc : "No Description"}</Description>
           <WishList>
             <WishlistWrapper>
-              <FavoriteBorderOutlined/>WISHLIST
+              <FavoriteBorderOutlined/>Favorito
             </WishlistWrapper>
           </WishList>
-          <Price>Rs. {price}</Price>
+          <Price>MZN. {price}</Price>
         </Info>  
       </Container>
     

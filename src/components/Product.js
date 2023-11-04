@@ -21,12 +21,12 @@ const LoadMore = styled.button`
   display: flex;
   align-items: center;
   padding: 10px;
-  border: 1px solid teal;
+  border: 1px solid #006bc8;
   background-color: white;
   box-shadow: 0 5px 15px rgba(0, 128, 128, 0.1);
   transition: all 0.3s ease-in-out;
   :hover {
-      background-color: teal;
+      background-color: #006bc8;
       color: white;
       box-shadow: 0 5px 15px rgba(0, 128, 128, 0.3);
   }
@@ -107,7 +107,7 @@ function Product(props) {
             <Wrapper>
               {products.map((Data)=> { return <ProductItem data={Data} key={Data._id} />})}       
             </Wrapper> 
-            <LoadMore onClick={() => setPage(p => p+1)}>Load More</LoadMore>
+            <LoadMore onClick={() => setPage(p => p+1)}>Ver mais</LoadMore>
           </>
         }
       </Container>

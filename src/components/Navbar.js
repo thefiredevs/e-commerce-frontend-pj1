@@ -119,7 +119,7 @@ const Center = styled.div`
 const Logo = styled.h1`
     font-weight: bold;
     text-align: center;
-    
+    color: #006bc8;
     ${mobile({
         textAlign: "start",
         fontSize: "1.5rem",
@@ -261,7 +261,7 @@ function Navbar() {
     <Container>
         <Wrapper>
             <Left>
-                <Logo><Link onClick={() => redirect("/")} style={link} to="/">THe FIRE DEVS.</Link></Logo>
+                <Logo><Link onClick={() => redirect("/")} style={link} to="/">Miray Brechó</Link></Logo>
             </Left>
             <Center>
             <SearchContainer>
@@ -279,13 +279,13 @@ function Navbar() {
                         <MenueItem><Link style={link} to="/login">Log In</Link></MenueItem></> 
                         :
                         <AccountContainer onClick={() => setOptionIsOpen(!optionIsOpen)} >
-                        <Hello>hello, {user.firstName}</Hello>
-                        <Account>Account {optionIsOpen ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</Account>
+                        <Hello> {user.firstName}</Hello>
+                        <Account>Conta {optionIsOpen ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</Account>
                             <DropdownList open={optionIsOpen}>
                                 <DropdownContainer onClick={(e) => e.stopPropagation()}>
-                                    <Dropdown><SettingsIcon/> Setting</Dropdown>
-                                    <Dropdown onClick={() => redirect("/orders")}><LocalMallIcon/> Orders</Dropdown>
-                                    <Dropdown onClick={handleLogout}><LogoutIcon/> Logout</Dropdown>
+                                    <Dropdown><SettingsIcon/> Definições</Dropdown>
+                                    <Dropdown onClick={() => redirect("/orders")}><LocalMallIcon/> Pedidos</Dropdown>
+                                    <Dropdown onClick={handleLogout}><LogoutIcon/> Sair</Dropdown>
                                 </DropdownContainer>
                             </DropdownList>
                         </AccountContainer>

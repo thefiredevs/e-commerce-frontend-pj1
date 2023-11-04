@@ -95,8 +95,7 @@ function Footer() {
         <Left>
             <Logo>THe FIRE DEVS.</Logo>
             <Description>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod possimus, dolor placeat voluptate ipsam delectus repellendus, laborum sunt ratione id obcaecati repudiandae, adipisci nihil fugit autem dignissimos quo! Officia, corporis?
-            </Description>
+            Na Tendências Elegantes, a satisfação do cliente é o que nos impulsiona. Estamos comprometidos em fornecer um atendimento excepcional e resolver qualquer dúvida ou problema que você possa ter. Afinal, seu sorriso é o nosso melhor elogio.            </Description>
             <SocialContainer>
                 <SocialIcons color='3b5998' href='https://www.facebook.com/' target="_blank">
                     <Facebook/>
@@ -113,24 +112,23 @@ function Footer() {
             </SocialContainer>
         </Left>
         <Center>
-            <Title>Useful Links</Title>
+            <Title>Links Úteis</Title>
             <List>
                 <ListItem>Login</ListItem>
                 <ListItem>Sign up</ListItem>
-                <ListItem>Wish list</ListItem>
-                <ListItem>Cart</ListItem>
-                <ListItem>Categorys</ListItem>
-                <ListItem>Terms</ListItem>
-                <ListItem>My Account</ListItem>
+                <ListItem>Favoritos</ListItem>
+                <ListItem>Carinho</ListItem>
+                <ListItem>Categorias</ListItem>
+                <ListItem>Minha conta</ListItem>
             </List>
         </Center>
         <Right>
-        <Title>Contect Us</Title>
+        <Title>Contactos</Title>
             <ContectItem>
-                <Map/> via Av. 24 de Julho and Av. Amilcar Cabral<br/>cidade maputo<br/><br/>Zip code  211213<br/>Mozambique
+                <Map/> via Av. 24 de Julho and Av. Amilcar Cabral<br/>cidade maputo<br/><br/>Zip code  211213<br/>MaMozambique
             </ContectItem> 
             <ContectItem>
-                <Call/>+258 879428236
+                <Call/>+258 879428236, +258 87 497 2025, +258 84 287 7156 & +258 83 327 9261
             </ContectItem> 
             <ContectItem>
                 <Email/> thefiredevs@gmail.com

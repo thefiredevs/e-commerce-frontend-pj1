@@ -99,57 +99,57 @@ const GetUserAddress = ({isOpen, setModal}) => {
   return (
     <ModalComp isOpen={isOpen}>
         <StyledForm onSubmit={handleSubmit}>
-        <StyledLabel>Street</StyledLabel>
+        <StyledLabel>Rua/AV</StyledLabel>
         <StyledInput
             type="text"
             name="street"
             value={address.street}
             onChange={handleChange}
-            placeholder="Enter street"
+            placeholder="digite a rua"
             required
             />
 
-        <StyledLabel>City</StyledLabel>
+        <StyledLabel>Cidade</StyledLabel>
         <StyledInput
             type="text"
             name="city"
             value={address.city}
             onChange={handleChange}
-            placeholder="Enter city"
+            placeholder="digite a cidade"
             required
         />
 
-        <StyledLabel>State</StyledLabel>
+        <StyledLabel>Provincia</StyledLabel>
         <StyledInput
             type="text"
             name="state"
             value={address.state}
             onChange={handleChange}
-            placeholder="Enter state"
+            placeholder="digite a provincia"
             required
             />
 
-        <StyledLabel>Zip</StyledLabel>
+        <StyledLabel>Codigo postal</StyledLabel>
         <StyledInput
             type="text"
             name="zip"
             value={address.zip}
             onChange={handleChange}
-            placeholder="Enter zip code"
+            placeholder="digite o codigo postal"
             required
             />
 
-            <StyledLabel>Country</StyledLabel>
+            <StyledLabel>Pais</StyledLabel>
             <Select
                 name="country"
                 value={address.country}
                 onChange={handleChange}
                 required>
-                <option value="" disabled>Select a country</option>
+                <option value="" disabled>Selecione o pais</option>
                 {countries.map(country => <option key={country} value={country}>{country}</option>)}
             </Select>
 
-            <StyledLabel>Mobile Number</StyledLabel>
+            <StyledLabel>NUmero de telefone</StyledLabel>
             <StyledInput
                 type="tel"
                 name="mobile"
@@ -159,8 +159,8 @@ const GetUserAddress = ({isOpen, setModal}) => {
                 required
             />
 
-        <StyledButton type="submit">Submit</StyledButton>
-        <StyledButton type="reset" onClick={() => setModal(false)}>Cancel</StyledButton>
+        <StyledButton type="submit">Enviar</StyledButton>
+        <StyledButton type="reset" onClick={() => setModal(false)}>Cancelar</StyledButton>
         </StyledForm>
 
     </ModalComp>

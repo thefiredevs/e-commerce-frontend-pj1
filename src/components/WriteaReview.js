@@ -110,7 +110,7 @@ function WriteaReview({product, isOpen, setModal}) {
                     precision={0.1}
                 >           
                 </Rating>
-                <TextBox placeholder='Share your thoughts on this product...' value={review} onChange={(e) => setReview(e.target.value)}></TextBox>
+                <TextBox placeholder='insira sua opiniao sobre esse produto...' value={review} onChange={(e) => setReview(e.target.value)}></TextBox>
             </RatingWrapper>
             <ButtonWrapper>
                 <Button onClick={() => setModal(false)} >Cancelar</Button>

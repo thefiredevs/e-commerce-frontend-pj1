@@ -369,13 +369,13 @@ function ProductPage(props) {
         
         const options = {
             key: Dbkey, //reciving key from backend sue to security 
-            amount: Dborder.amount, 
+            amount: Dborder.quantity, 
             currency: "INR",
             name: product.title,
             description : `${product.desc.slice(0, 252)}...` || "random description", //slicing it because razor pay dosent allow desc length more then 255
             image: product.img,
             order_id: Dborder.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-            callback_url: "http://localhost:4000/api/buy/paymentVerify",
+        callback_url: "http://localhost:4000/api/~~/paymentVerify",
             prefill: {
                 name: `${user.firstName} ${user.lastName}`,
                 email: user.email,
@@ -426,17 +426,17 @@ function ProductPage(props) {
                 </TitleContainer>
                 <Description>{!product.desc ? `Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sint accusamus explicabo in natus dolor maiores voluptate labore adipisci!lorem20Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dicta, commodi pariatur nisi fugiat hic quia voluptas! Quidem, earum voluptas.`: product.desc}
                 </Description>
-                <Price>₹{product.price}</Price>
+                <Price>MZN {product.price}</Price>
                 {product.quantity <= 5 && <Stock inStock={product.quantity >= 1}>{product.quantity >= 1 ? `Only ${product.quantity} left in stock` : "Currently unavailable"}</Stock>}
                 <FilterContainer>
                     <Filter>
-                        <FilterTitle>Color</FilterTitle>
+                        <FilterTitle>Cor</FilterTitle>
                         {(product.color || []).map((e)=> (
                           <FilterColor color={e} key={e} onClick={()=> setColor(e)}/>
                         ))}
                     </Filter>
                     <Filter>
-                    <FilterTitle>Size</FilterTitle>
+                    <FilterTitle>Tamanho</FilterTitle>
                     <FilterSize onChange={(e)=> setsize(e.target.value)} >
                         {(product.size || []).map((e)=> (
                            <FilterSizeOption key={e}>{e}</FilterSizeOption>
@@ -455,8 +455,8 @@ function ProductPage(props) {
                           </ValueARButton>                          
                         </ValueContainer>
                         <PurchaeContainer>
-                          <Button onClick={handleSubClick} disabled={product.quantity < 1}>Add To Cart</Button>
-                          <Button onClick={handleBuyNow} disabled={product.quantity < 1}>Buy Now</Button>
+                          <Button onClick={handleSubClick} disabled={product.quantity < 1}>Adicionar ao carinho</Button>
+                          <Button onClick={handleBuyNow} disabled={product.quantity < 1}>Comprar agora</Button>
                         </PurchaeContainer>
                       </CartContainer>
             </InfoContainer>

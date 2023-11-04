@@ -49,7 +49,7 @@ const Button = styled.button`
     box-shadow: 0px 0px 1px #888888;
     border-radius: 0.5vmin;
     transition: all 0.3s ease-in-out;
-
+    textDecoration: #006bc8;
     
 `
 
@@ -95,7 +95,7 @@ function CategoryItems(item) {
             <Image src={img}/>
             <Info>
                 <Title>{title}</Title>
-                <Button><Link style={link} to={`/products/${cat}`}>Ler Mais</Link></Button>
+                <Button><Link style={link} to={`/products/${cat}`}>Ver Mais</Link></Button>
             </Info>
         </Container>
   )

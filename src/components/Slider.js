@@ -5,8 +5,8 @@ import {mobile} from '../Responsive'
 
 const Container = styled.div`
     margin: auto;
-    width: 1600px;
-    max-width: 90%;
+    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction:column;
     align-items: center;
@@ -45,8 +45,9 @@ const Info = styled.div`
 `
 const Title = styled.h1`
     font-size: 40px;
+    color: #006bc8;
     margin-bottom: 10px;
-    font-family: 'Alfa Slab One', cursive;
+    font-family: 'Alfa Slab One'
     @media only screen and (max-width: 900px) {
         font-size: 20px;
     }
@@ -59,7 +60,7 @@ const Button = styled.button`
     margin-bottom: 5px;
     font-family: 'Hanken Grotesk', sans-serif;
     border-radius: 2vmax;
-    background-color: black;
+    background-color: #006bc8;
     color: white;
     padding: 10px;
     
@@ -68,7 +69,7 @@ const Button = styled.button`
 
 function Slider() {
     const navigate = useNavigate();
-    const index = Math.floor(Math.random() * 3) + 1
+    const index = Math.floor(Math.random() * 2) + 1
     const heroInfo = hero[index]
     console.log(hero)
 
@@ -77,7 +78,7 @@ function Slider() {
   return (
     <Container>
         <ImageWrapper>
-            <Image src='https://themanufacturer-cdn-1.s3.eu-west-2.amazonaws.com/wp-content/uploads/2018/07/14113818/Depositphotos_160634808_m-2015.jpg'/>
+            <Image src='https://static.zattini.com.br/bnn/l_zattini/2023-10-11/3884_1922x500_full1_generica_231011.png'/>
         </ImageWrapper>
         <Info>
             <Title>{heroInfo.title}</Title>
