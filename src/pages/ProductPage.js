@@ -11,7 +11,6 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import {publicRequest, userRequest} from '../axiosReqMethods'
 import { addProduct} from '../redux/cartRedux'
 import { useDispatch, useSelector } from 'react-redux'
-import addDynamicScript from '../helpers/addDynamicScript'
 import { useRef } from 'react'
 import Loading from '../components/Loading'
 import axios from 'axios'
@@ -19,7 +18,7 @@ import ReviewComp from '../components/ReviewComp'
 import WriteaReview from '../components/WriteaReview'
 import { setError } from '../redux/errorRedux'
 import GetUserAddress from '../components/GetUserAddress'
-import { setAddress } from '../redux/userRedux'
+
 
 
 
@@ -281,7 +280,7 @@ function ProductPage(props) {
         setProduct({})
         setProductQuentity(1)
       }
-    }, [id])
+    }, [id, dispatch, navigate, ourRequest])
    
     const HandlClick = (type) => {   
         if(type === "dec") setProductQuentity((prev) => ProductQuentity > 1 ? prev -1: prev)
@@ -316,7 +315,7 @@ function ProductPage(props) {
     }
 
 
-    const userAddress = useSelector(state => state.user.address)   
+    
 
     const handleBuyNow = async () => {
         if(!user) {
@@ -324,72 +323,11 @@ function ProductPage(props) {
         } 
 
         // if there is address then continue or set get address popup
-        if(!userAddress){  //if address is not stored in users local storage then get from db
-            try {
-                const {data} = await userRequest.get("/api/user/address")
-                if(!data.ok){
-                    return setaddmodalIsOpen(true);
-                }
-                dispatch(setAddress(data.address))  //setting address wh to redux       
-            } catch (error) {
-                return setaddmodalIsOpen(true)
-            }
-        }
         
-        if(!window.Razorpay) {
-            await addDynamicScript("https://checkout.razorpay.com/v1/checkout.js") //script is not loading at first time dk why so i added this XD
-        } 
 
-        let Dborder, Dbkey;
-        try {
-            const {data:{order}} = await userRequest.post("api/buy/checkout",{
-                user:user._id,
-                product: {
-                    productID: product._id,
-                    quantity:ProductQuentity,
-                    size, 
-                    color:Color,
-                },
-                type: "product",
-                userInfo: {
-                    address: userAddress,
-                    name: `${user.firstName} ${user.lastName}`,
-                    email: user.email,
-                    number: user.number
-                }
-            });
-            Dborder = order;
-
-            const {data:{key}} = await userRequest.get("api/buy/getkey");
-            Dbkey = key;
-
-        } catch (error) {
-            dispatch(setError(error?.response?.data?.message || "error accured while creating order"))
-        }
         
-        const options = {
-            key: Dbkey, //reciving key from backend sue to security 
-            amount: Dborder.quantity, 
-            currency: "INR",
-            name: product.title,
-            description : `${product.desc.slice(0, 252)}...` || "random description", //slicing it because razor pay dosent allow desc length more then 255
-            image: product.img,
-            order_id: Dborder.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        callback_url: "http://localhost:4000/api/~~/paymentVerify",
-            prefill: {
-                name: `${user.firstName} ${user.lastName}`,
-                email: user.email,
-                contact: user.number
-            },
-            notes: {
-                address: "Dummy Office address"
-            },
-            theme: {
-                color: "#40a0a0"
-            }
-        };      
-        const rzp1 = new window.Razorpay(options);
-        rzp1.open();       
+        
+              
     }
 
  

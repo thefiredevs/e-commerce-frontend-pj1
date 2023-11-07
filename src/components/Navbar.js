@@ -2,7 +2,7 @@ import { Badge } from "@material-ui/core"
 import { Search, ShoppingCartOutlined } from '@material-ui/icons'
 //import { ShoppingCartOutlined } from "@mui/icons-material"
 import { Link, useNavigate } from "react-router-dom";
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import {mobile} from '../Responsive'
 import { useSelector } from "react-redux";
@@ -223,7 +223,7 @@ function Navbar() {
         }
         fetchh();
 
-    }, [])
+    }, [dispatch, user])
 
     const [searchProducts, setSearchProducts] = useState();
     const handleSearch = async (e) => {

@@ -95,7 +95,7 @@ function Login(props) {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { isFetching, isError, currentUser} = useSelector(state => state.user)
+  const { isFetching, isError} = useSelector(state => state.user)
 
   const dispatch = useDispatch()
   const submit = async (e) => {

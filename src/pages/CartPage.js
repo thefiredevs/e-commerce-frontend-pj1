@@ -241,11 +241,7 @@ const SummaryText = styled.div`
 const SummaryPrice = styled.div`
     
 `
-const ButtonWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
+
 const Button = styled.button`
     background-color: black;
     cursor: pointer;   
@@ -284,33 +280,42 @@ function CartPage(props) {
 
 
     //get User Cart
-    useEffect( async () => {
-        if(user) {
-            try{      
-                setFetchCartLoading(true)         
-                const res = await userRequest.get(`/api/cart/info/${user._id}`)
-                setFetchCartLoading(false)
-                setCartProductRes(res.data)
-                
-            }catch(err){
-                console.log("error", err)
-                setFetchCartLoading(false)
-                dispatch(setError(err.response.data.message))      //setting error       
-            }           
-        }
+    useEffect(() => {
+        const fetchData = async () => {
+            if(user) {
+                try{      
+                    setFetchCartLoading(true)         
+                    const res = await userRequest.get(`/api/cart/info/${user._id}`)
+                    setFetchCartLoading(false)
+                    setCartProductRes(res.data)
+                    
+                }catch(err){
+                    console.log("error", err)
+                    setFetchCartLoading(false)
+                    dispatch(setError(err.response.data.message))      //setting error       
+                }           
+            }
+        };
+    
+        fetchData();
+    
         return () => {
             setCartProductRes(null)
         }
-    }, [])
+    }, [user, dispatch])
 
     //count cart total
-    const [totalCartPrice, setTotalCartPrice] = useState(0)
-    useEffect(() => {   
-        const total = cartProductRes?.products.reduce((total, item) => {
-            return total + (item.price * item.quantity)
-        },0)
-        setTotalCartPrice(total);
-    }, [cartProductRes?.products, cartProductRes?.products?.map(p => p.quantity)])//map is used bcz we need to reRender this component if any products quantity changes so we maped true every product quantity
+    //count cart total
+const [totalCartPrice, setTotalCartPrice] = useState(0)
+
+const productQuantities = cartProductRes?.products?.map(p => p.quantity);
+
+useEffect(() => {   
+    const total = cartProductRes?.products.reduce((total, item) => {
+        return total + (item.price * item.quantity)
+    },0)
+    setTotalCartPrice(total);
+}, [cartProductRes?.products, productQuantities])//map is used bcz we need to reRender this component if any products quantity changes so we maped true every product quantity
      
     //delete product
     const handleDeleteProduct = async (id) => {
@@ -371,6 +376,9 @@ function CartPage(props) {
             }
         }
 
+        
+          
+
         setischeckoutLoading(true) 
         if(!window.Razorpay) {
             await addDynamicScript("https://checkout.razorpay.com/v1/checkout.js") //script is not loading at first time dk why so i added this XD
@@ -419,7 +427,35 @@ function CartPage(props) {
         setCartProductRes(null)
     }
     
-
+    const mockCheckout = async () => {
+        // Simulate a loading state
+        setischeckoutLoading(true);
+      
+        try {
+          // Simulate a successful checkout process
+          // You can set a timeout to mimic a real API call
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+      
+          // Simulate a successful response
+          const successResponse = { success: true, message: 'Checkout successful' };
+          // Update the state or perform other actions based on the response
+          console.log(successResponse);
+      
+          // Simulate a loading state
+          setischeckoutLoading(false);
+      
+          // Clear the cart or perform other necessary actions
+          setCartProductRes(null);
+        } catch (error) {
+          // Simulate an error response
+          const errorResponse = { success: false, message: 'Checkout failed' };
+          // Update the state or perform other actions based on the error
+          console.error(errorResponse);
+      
+          // Simulate a loading state
+          setischeckoutLoading(false);
+        }
+      };
 
   return (
     <Container>
@@ -483,9 +519,8 @@ function CartPage(props) {
                             <SummaryText >Total</SummaryText>
                             <SummaryPrice>{totalCartPrice?.toFixed(2)}</SummaryPrice>
                         </SummaryItem>
-                        <ButtonWrapper>
-                            <Button onClick={handleCheckout} disabled={isCheckoutLoading? true : false}>Check out</Button>
-                        </ButtonWrapper>    
+                        <Button onClick={mockCheckout} disabled={isCheckoutLoading ? true : false}>  Checkout</Button>
+   
                 </Summary>
             
             </Bottom>

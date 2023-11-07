@@ -47,7 +47,7 @@ function MessageComponent() {
             }
         }
     
-    }, [message, id])
+    }, [message, id, dispatch])
     
   return (
     <>

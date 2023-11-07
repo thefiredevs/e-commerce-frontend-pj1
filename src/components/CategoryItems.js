@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import React from 'react'
-import {mobile} from '../Responsive'
 import '../app.css'
 import { Link } from 'react-router-dom';
 

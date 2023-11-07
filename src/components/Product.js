@@ -88,7 +88,7 @@ function Product(props) {
     return () => {
       axiosCancelToken.cancel();
     }
-  }, [cat, page, color, size,sort])
+  }, [cat, page, color, size,sort, prevFilters, dispatch])
 
 
   

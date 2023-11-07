@@ -23,9 +23,7 @@ const TopSection = styled.div`
 const Title = styled.h1`
     margin-left: 10px;
 `
-const Desc = styled.span`
 
-`
 
 const BottomSection = styled.div`
     display: flex;
@@ -54,7 +52,7 @@ function OrdersPage() {
         }
       }
       fetchOrders()
-    }, [])
+    }, [user?._id])
     
   return (
     <>

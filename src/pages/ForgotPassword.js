@@ -94,7 +94,6 @@ const Button2 = styled.button`
 `
 const ForgotPassword = () => {
     const dispatch = useDispatch()
-    const [message, setmessage] = useState(null)
     const navigate = useNavigate();
     const [email, setEmail] = useState(null)
     

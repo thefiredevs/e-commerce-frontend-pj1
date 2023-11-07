@@ -130,7 +130,7 @@ const BackToLogin = styled.button`
 `
 const ResetPassword = () => {
     const dispatch = useDispatch()
-    const [message, setmessage] = useState("")
+    const [ setmessage] = useState("")
     const navigate = useNavigate();
     const [password, setpassword] = useState(null)
     const [cpassword, setCpassword] = useState(null)

@@ -83,7 +83,7 @@ function ReviewComp({productID, productName, ratingCount, rating, setModal}) {
             dispatch(setError(error.response.data.message))
         }
       })()
-    }, [])
+    }, [dispatch, productID])
 
     const handleWriteReview = () => {
         if(!user) navigate('/login')
