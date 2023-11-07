@@ -354,78 +354,8 @@ useEffect(() => {
     const [addmodalisOpen, setaddmodalIsOpen] = useState(false)
 
     const [isCheckoutLoading, setischeckoutLoading] = useState(false);
-    const userAddress = useSelector(state => state.user.address)   
-    const handleCheckout = async () => {
+      
 
-        if(!user) {
-            return navigate('/login');
-        } 
-
-        // if there is address then continue or set get address popup
-        console.log({userAddress})
-        if(!userAddress){  //if address is not stored in users local storage then get from db
-            try {
-                const {data} = await userRequest.get("/api/user/address")
-                console.log(data)
-                if(!data.ok){
-                    return setaddmodalIsOpen(true);
-                }
-                dispatch(setAddress(data.address))  //setting address wh to redux       
-            } catch (error) {
-                return setaddmodalIsOpen(true)
-            }
-        }
-
-        
-          
-
-        setischeckoutLoading(true) 
-        if(!window.Razorpay) {
-            await addDynamicScript("https://checkout.razorpay.com/v1/checkout.js") //script is not loading at first time dk why so i added this XD
-        } 
-
-        const {data:{order}} = await userRequest.post("api/buy/checkout",{
-            user:user._id,
-            type: "cart",
-            userInfo: {
-                address: userAddress,
-                name: `${user.firstName} ${user.lastName}`,
-                email: user.email,
-            }
-        });
-
-        const {data:{key}} = await userRequest.get("api/buy/getkey");
-        setischeckoutLoading(false) 
-
-        if(!order || !key){
-            return dispatch(setError("error accured while creating order"));
-        }
-          
-        const options = {
-            key: key, //reciving key from backend for security purpose  
-            amount: order.ammount, 
-            currency: "INR",
-            name: `${user.firstName} ${user.lastName}'s Cart`,
-            description :  `${user.firstName} ${user.lastName}'s Cart includes total ${cartProductRes?.products?.length}`,
-            image: "https://toppng.com/uploads/preview/astronaut-art-png-jpg-royalty-free-stock-astronauta-dibujo-11562856188offwkk8qo8.png",
-            order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-            callback_url: "http://localhost:4000/api/buy/paymentVerify",  
-            prefill: {
-                name: `${user.firstName} ${user.lastName}`,
-                email: user.email,
-                contact: user.number
-            },
-            notes: {
-                address: "Razorpay Corporate Office"
-            },
-            theme: {
-                color: "#40a0a0"
-            }
-        };      
-        const rzp1 = new window.Razorpay(options);
-        rzp1.open();       
-        setCartProductRes(null)
-    }
     
     const mockCheckout = async () => {
         // Simulate a loading state
