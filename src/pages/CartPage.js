@@ -10,11 +10,11 @@ import  { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { userRequest } from '../axiosReqMethods'
 import { deleteProduct } from '../redux/cartRedux'
-import addDynamicScript from '../helpers/addDynamicScript'
+
 import { setError } from '../redux/errorRedux'
 import EmptyCartComponent from '../components/EmptyCartComponent'
 import Loading from '../components/Loading'
-import { setAddress } from '../redux/userRedux'
+
 import GetUserAddress from '../components/GetUserAddress'
 
 
